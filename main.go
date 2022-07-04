@@ -37,12 +37,18 @@ func main() {
 		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceTickets)
 
 		firstNames := []string{}
+
 		for _, booking := range bookings {
 			var names = strings.Fields(booking)
+
 			firstNames = append(firstNames, names[0])
 		}
 
 		fmt.Printf("The firs name of bookins are: %v\n", firstNames)
+
+		if remainingTickets == 0 {
+			//end program
+		}
 	}
 
 }
