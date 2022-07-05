@@ -30,6 +30,11 @@ func main() {
 		fmt.Println("Enter number of ticket: ")
 		fmt.Scan(&userTickets)
 
+		if userTickets > remainingTickets {
+			fmt.Printf("We only have %v tickets remaining, so yo can't book %v tickets\n", remainingTickets, userTickets)
+			break
+		}
+
 		remainingTickets = remainingTickets - userTickets
 		bookings = append(bookings, firtsName+" "+lastName)
 
@@ -41,7 +46,6 @@ func main() {
 			var names = strings.Fields(booking)
 			firstNames = append(firstNames, names[0])
 		}
-
 		fmt.Printf("The first name of bookings are: %v\n", firstNames)
 
 		if remainingTickets == 0 {
