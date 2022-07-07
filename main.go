@@ -30,28 +30,28 @@ func main() {
 		fmt.Println("Enter number of ticket: ")
 		fmt.Scan(&userTickets)
 
-		if userTickets > remainingTickets {
+		if userTickets <= remainingTickets {
+			remainingTickets = remainingTickets - userTickets
+			bookings = append(bookings, firtsName+" "+lastName)
+
+			fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
+			fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceTickets)
+
+			firstNames := []string{}
+			for _, booking := range bookings {
+				var names = strings.Fields(booking)
+				firstNames = append(firstNames, names[0])
+			}
+			fmt.Printf("The first name of bookings are: %v\n", firstNames)
+
+			if remainingTickets == 0 {
+				//end program
+				fmt.Println("Out conference is booked out. Come back next year")
+				break
+			}
+		} else {
 			fmt.Printf("We only have %v tickets remaining, so yo can't book %v tickets\n", remainingTickets, userTickets)
-			continue
-		}
 
-		remainingTickets = remainingTickets - userTickets
-		bookings = append(bookings, firtsName+" "+lastName)
-
-		fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
-		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceTickets)
-
-		firstNames := []string{}
-		for _, booking := range bookings {
-			var names = strings.Fields(booking)
-			firstNames = append(firstNames, names[0])
-		}
-		fmt.Printf("The first name of bookings are: %v\n", firstNames)
-
-		if remainingTickets == 0 {
-			//end program
-			fmt.Println("Out conference is booked out. Come back next year")
-			break
 		}
 	}
 
