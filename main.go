@@ -30,6 +30,8 @@ func main() {
 		fmt.Println("Enter number of ticket: ")
 		fmt.Scan(&userTickets)
 
+		//ifvalidName := len(firtsName) >= 2 && len(lastName) >= 2
+
 		if userTickets < remainingTickets {
 			remainingTickets = remainingTickets - userTickets
 			bookings = append(bookings, firtsName+" "+lastName)
