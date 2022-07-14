@@ -30,7 +30,8 @@ func main() {
 		fmt.Println("Enter number of ticket: ")
 		fmt.Scan(&userTickets)
 
-		//ifvalidName := len(firtsName) >= 2 && len(lastName) >= 2
+		//ifValidName := len(firtsName) >= 2 && len(lastName) >= 2
+		//ifValidEmail := strings.Contains(email, @)
 
 		if userTickets < remainingTickets {
 			remainingTickets = remainingTickets - userTickets
