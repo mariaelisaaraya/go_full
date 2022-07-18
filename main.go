@@ -71,5 +71,6 @@ func main() {
 
 func greetUsers(confName string, confTickets int, remainingTickets uint) {
 	fmt.Printf("Welcome to %v booking aplication\n", confName)
-	fmt.Printf("We have total of %v tickets and %v are still available\nGet your tickets here to attend", confTickets, remainingTickets)
+	fmt.Printf("We have total of %v tickets and %v are still available\n", confTickets, remainingTickets)
+	fmt.Println("Get your tickets here to attend")
 }
