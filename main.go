@@ -29,9 +29,8 @@ func main() {
 		fmt.Println("Enter number of ticket: ")
 		fmt.Scan(&userTickets)
 
-		isValidName := len(firtsName) >= 2 && len(lastName) >= 2
-		isValidEmail := strings.Contains(email, "@")
-		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
+		//
+		validateUserInput(firtsName, lastName, email, userTickets, remainingTickets)
 
 		if isValidName && isValidEmail && isValidTicketNumber {
 			remainingTickets = remainingTickets - userTickets
@@ -80,5 +79,11 @@ func getFirstNames(bookings []string) []string {
 	return firstNames
 }
 
-//func validateUserInput() {
-//	isValidName := len(firstName)
+func validateUserInput(firtsName string, lastName string, email string, userTickets uint, remainingTickets uint) {
+	isValidName := len(firtsName) >= 2 && len(lastName) >= 2
+	isValidEmail := strings.Contains(email, "@")
+	isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
+
+}
+
+//errores nuevos
