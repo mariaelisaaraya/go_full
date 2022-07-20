@@ -21,6 +21,8 @@ func main() {
 
 		if isValidName && isValidEmail && isValidTicketNumber {
 
+			bookTicket(remainingTickets, userTickets, bookings, firtsName, lastName, email, conferenceName)
+
 			firtsNames := getFirstNames(bookings)
 			fmt.Printf("The first name of bookings are: %v\n", firtsNames)
 
