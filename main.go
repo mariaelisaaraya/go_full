@@ -15,16 +15,11 @@ func main() {
 
 	for {
 
+		//diferent order func
 		firtsName, lastName, email, userTickets := getUserInput()
-		//
 		isValidName, isValidEmail, isValidTicketNumber := validateUserInput(firtsName, lastName, email, userTickets, remainingTickets)
 
 		if isValidName && isValidEmail && isValidTicketNumber {
-			remainingTickets = remainingTickets - userTickets
-			bookings = append(bookings, firtsName+" "+lastName)
-
-			//fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
-			//fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceTickets)
 
 			firtsNames := getFirstNames(bookings)
 			fmt.Printf("The first name of bookings are: %v\n", firtsNames)
@@ -91,5 +86,22 @@ func getUserInput() (string, string, string, uint) {
 	fmt.Scan(&userTickets)
 
 	return firtsName, lastName, email, userTickets
+
+}
+
+func bookTicket(
+	remainingTickets uint,
+	userTickets uint,
+	bookings []string,
+	firtsName string,
+	lastName string,
+	email string,
+	conferenceName string) {
+
+	remainingTickets = remainingTickets - userTickets
+	bookings = append(bookings, firtsName+" "+lastName)
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
+	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
 }
