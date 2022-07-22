@@ -5,8 +5,6 @@ import (
 	"strings"
 )
 
-//package level variables
-
 const conferenceTickets int = 50
 
 var conferenceName = "Go Conference"
@@ -14,7 +12,8 @@ var remainingTickets uint = 50
 var bookings = []string{}
 
 func main() {
-	greetUsers(conferenceName, conferenceTickets, remainingTickets)
+	greetUsers() //I get the parameter
+
 	for {
 
 		//diferent order func
@@ -50,9 +49,9 @@ func main() {
 
 }
 
-func greetUsers(confName string, confTickets int, remainingTickets uint) {
-	fmt.Printf("Welcome to %v booking aplication\n", confName)
-	fmt.Printf("We have total of %v tickets and %v are still available\n", confTickets, remainingTickets)
+func greetUsers() { //I call the parameter with the same name
+	fmt.Printf("Welcome to %v booking aplication\n", conferenceName)
+	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
 	fmt.Println("Get your tickets here to attend")
 }
 
