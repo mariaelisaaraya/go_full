@@ -5,14 +5,16 @@ import (
 	"strings"
 )
 
+//package level variables
+
+const conferenceTickets int = 50
+
+var conferenceName = "Go Conference"
+var remainingTickets uint = 50
+var bookings = []string{}
+
 func main() {
-	conferenceName := "Go Conference"
-	const conferenceTickets int = 50
-	var remainingTickets uint = 50
-	bookings := []string{}
-
 	greetUsers(conferenceName, conferenceTickets, remainingTickets)
-
 	for {
 
 		//diferent order func
