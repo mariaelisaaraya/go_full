@@ -10,14 +10,13 @@ const conferenceTickets int = 50
 
 var conferenceName = "Go Conference"
 var remainingTickets uint = 50
-var bookings = []string{}
+var bookings = []string{} //now: list of map
 
 func main() {
 
 	greetUsers()
 
 	for {
-
 		//diferent order func
 		firtsName, lastName, email, userTickets := getUserInput()
 		isValidName, isValidEmail, isValidTicketNumber := helper.ValidateUserInput(firtsName, lastName, email, userTickets, remainingTickets)
@@ -89,6 +88,9 @@ func getUserInput() (string, string, string, uint) {
 func bookTicket(userTickets uint, firtsName string, lastName string, email string) {
 
 	remainingTickets = remainingTickets - userTickets
+
+	// this create a map for user
+
 	bookings = append(bookings, firtsName+" "+lastName)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
