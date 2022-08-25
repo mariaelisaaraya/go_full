@@ -17,7 +17,6 @@ func main() {
 	greetUsers()
 
 	for {
-		//diferent order func
 		firtsName, lastName, email, userTickets := getUserInput()
 		isValidName, isValidEmail, isValidTicketNumber := helper.ValidateUserInput(firtsName, lastName, email, userTickets, remainingTickets)
 
@@ -70,7 +69,6 @@ func getUserInput() (string, string, string, uint) {
 	var lastName string
 	var email string
 	var userTickets uint
-
 	//asking for user input
 	fmt.Println("Enter your first name: ")
 	fmt.Scan(&firtsName)
@@ -80,19 +78,13 @@ func getUserInput() (string, string, string, uint) {
 	fmt.Scan(&email)
 	fmt.Println("Enter number of ticket: ")
 	fmt.Scan(&userTickets)
-
 	return firtsName, lastName, email, userTickets
-
 }
 
 func bookTicket(userTickets uint, firtsName string, lastName string, email string) {
-
 	remainingTickets = remainingTickets - userTickets
-
 	// this create a map for user
-
 	bookings = append(bookings, firtsName+" "+lastName)
-
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firtsName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
